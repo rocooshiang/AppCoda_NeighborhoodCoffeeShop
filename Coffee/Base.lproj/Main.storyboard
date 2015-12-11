@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,35 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ATq-da-ZKG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ub0-Oh-vLd">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ub0-Oh-vLd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Yz-Vc-emp"/>
+                            <constraint firstItem="Ub0-Oh-vLd" firstAttribute="top" secondItem="ATq-da-ZKG" secondAttribute="bottom" id="6Wy-UD-V89"/>
+                            <constraint firstItem="ATq-da-ZKG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="A8R-MQ-EnQ"/>
+                            <constraint firstAttribute="trailing" secondItem="ATq-da-ZKG" secondAttribute="trailing" id="PZW-qL-OKa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ub0-Oh-vLd" secondAttribute="bottom" id="Uou-l6-AaD"/>
+                            <constraint firstItem="Ub0-Oh-vLd" firstAttribute="height" secondItem="ATq-da-ZKG" secondAttribute="height" id="aW7-0o-Ubx"/>
+                            <constraint firstAttribute="trailing" secondItem="Ub0-Oh-vLd" secondAttribute="trailing" id="s3R-SG-0MT"/>
+                            <constraint firstItem="ATq-da-ZKG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xWP-DL-bB9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="ATq-da-ZKG" id="aVo-tg-ozo"/>
+                        <outlet property="tableView" destination="Ub0-Oh-vLd" id="X4c-Em-TYI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="316"/>
         </scene>
     </scenes>
 </document>
