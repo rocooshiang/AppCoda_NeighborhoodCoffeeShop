@@ -78,6 +78,7 @@ class ViewController: UIViewController{
       let realm = try! Realm()
       
       venues = realm.objects(Venue).filter(predicate).sort {
+        //The $0 and $1 are shorthands for the two unsorted objects.
         location.distanceFromLocation($0.coordinate) < location.distanceFromLocation($1.coordinate)
       }
       
